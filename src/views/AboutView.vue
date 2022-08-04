@@ -1,6 +1,9 @@
 <template lang="pug">
-.wrapper about page
-  .wrapper-1 123
+.container
+  .wrapper about page
+    .wrapper-1 123
+    p 231312
+    span 4124213sad
 
 </template>
 
