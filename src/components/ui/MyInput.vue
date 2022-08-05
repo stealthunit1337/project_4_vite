@@ -1,5 +1,7 @@
 <template lang='pug'>
-
+.input-wrapper
+  .input-label {{ label }}
+  input.input-body
 </template>
 
 <script lang='ts'>
