@@ -112,12 +112,12 @@
 						<div class="carousel-indicators">
 							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
 								class="active carousel-button" aria-current="true" aria-label="Slide 1"></button>
-							<button class='carousel-button' type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-								aria-label="Slide 2"></button>
-							<button class='carousel-button' type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-								aria-label="Slide 3"></button>
-							<button class='carousel-button' type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
-								aria-label="Slide 4"></button>
+							<button class='carousel-button' type="button" data-bs-target="#carouselExampleDark"
+								data-bs-slide-to="1" aria-label="Slide 2"></button>
+							<button class='carousel-button' type="button" data-bs-target="#carouselExampleDark"
+								data-bs-slide-to="2" aria-label="Slide 3"></button>
+							<button class='carousel-button' type="button" data-bs-target="#carouselExampleDark"
+								data-bs-slide-to="3" aria-label="Slide 4"></button>
 						</div>
 						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
 							data-bs-slide="next">
@@ -132,10 +132,18 @@
 
 </template>
 
-<script>
-export default {
+<script lang='ts'>
+import { defineComponent } from 'vue'
 
-}
+export default defineComponent({
+	setup() {
+
+
+		return {
+
+		}
+	}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -145,22 +153,34 @@ export default {
 
 	}
 
+	&-dark {
+		filter: none !important;
+	}
+
 	&-button {
 		border: solid 2px rgba(0, 0, 0, 0);
 		border-radius: 50%;
 		background-color: $add  !important;
-		opacity: 1;
+		opacity: 1 !important;
 		margin: 0;
+		align-self: center;
+		filter: none !important;
 
-		&:not(:last-child) {
-			margin-right: 10px;
+		&:hover {
+			background-color: $hover  !important;
+		}
+
+		&:active {
+			background-color: $pressed  !important;
 		}
 
 		&.active {
 			background-color: $primary  !important;
 			border: solid 2px $add;
+		}
 
-
+		&:not(:last-child) {
+			margin-right: 10px;
 		}
 	}
 
@@ -202,13 +222,13 @@ export default {
 			width: 64px;
 			position: static;
 			z-index: 999;
-			opacity: 1;
+			opacity: 1 !important;
 
 			&-icon {
 				background-image: url('@/assets/icons/carousel-control.svg');
 				width: 64px;
 				height: 64px;
-				filter: none;
+				filter: none !important;
 
 				&:hover {
 					background-image: url('@/assets/icons/carousel-control-hover.svg');
@@ -226,14 +246,14 @@ export default {
 			width: 64px;
 			position: static;
 			z-index: 999;
-			opacity: 1;
+			opacity: 1 !important;
 
 			&-icon {
 				background-image: url('@/assets/icons/carousel-control.svg');
 				transform: rotate(180deg);
 				width: 64px;
 				height: 64px;
-				filter: none;
+				filter: none !important;
 
 				&:hover {
 					background-image: url('@/assets/icons/carousel-control-hover.svg');
